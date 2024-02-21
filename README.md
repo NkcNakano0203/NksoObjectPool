@@ -1,2 +1,2 @@
-# NksoObjectPool
+# nknObjectPool
 自作のオブジェクトプールライブラリ

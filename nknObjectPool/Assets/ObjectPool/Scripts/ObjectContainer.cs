@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Pool;
-using UnityEngine.UIElements;
 
-namespace Amatsubame.Container
+namespace Nkso.Container
 {
     public class ObjectContainer : MonoBehaviour, IObjectContainer
     {
@@ -32,7 +30,7 @@ namespace Amatsubame.Container
             gameObjectPool.Add(original.GetInstanceID(), objectPool);
         }
 
-        public void RegisterFrom<T>(T original) where T : Component
+        public void RegisterFromComponent<T>(T original) where T : Component
         {
             T prefab = original;
             // 登録済みならスキップ

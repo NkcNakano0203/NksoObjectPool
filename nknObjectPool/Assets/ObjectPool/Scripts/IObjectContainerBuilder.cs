@@ -1,4 +1,4 @@
-﻿namespace Amatsubame.Container
+﻿namespace Nkso.Container
 {
     public interface IObjectContainerBuilder
     {
