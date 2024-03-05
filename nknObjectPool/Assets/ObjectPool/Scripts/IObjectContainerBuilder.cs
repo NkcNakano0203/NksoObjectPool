@@ -1,7 +1,7 @@
-﻿namespace Nkso.Container
+﻿namespace nkn.Container
 {
     public interface IObjectContainerBuilder
     {
-        public void Build(IObjectContainer pool) { }
+        public void Build(IObjectContainer pool);
     }
 }

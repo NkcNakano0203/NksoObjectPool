@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.Pool;
 
-namespace Nkso.Container
+namespace nkn.Container
 {
     public class ObjectContainer : MonoBehaviour, IObjectContainer
     {

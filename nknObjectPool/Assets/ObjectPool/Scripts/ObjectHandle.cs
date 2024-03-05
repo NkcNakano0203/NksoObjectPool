@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Nkso.Container
+namespace nkn.Container
 {
     public abstract class ObjectHandle<T> : IDisposable
     {
