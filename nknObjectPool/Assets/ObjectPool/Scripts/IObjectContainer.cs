@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Nkso.Container
+namespace nkn.Container
 {
     public interface IObjectContainer
     {
@@ -18,13 +18,15 @@ namespace Nkso.Container
 
         /// <summary>
         /// 指定したゲームオブジェクトを取得する
+        /// 登録されていない場合は警告文と共にインスタンスを返す
         /// </summary>
         /// <param name="original">取得したいゲームオブジェクト</param>
         /// <returns>インスタンスが入ったハンドル</returns>
-        public ObjectHandle<GameObject> Get(GameObject original);
+        public ObjectHandle<GameObject> Get(GameObject original);   
 
         /// <summary>
         /// 指定したゲームオブジェクトを取得する
+        /// 登録されていない場合は警告文と共にインスタンスを返す
         /// </summary>
         /// <param name="original">取得したいゲームオブジェクト</param>
         /// <param name="parent">親にしたいオブジェクト</param>
@@ -33,6 +35,7 @@ namespace Nkso.Container
 
         /// <summary>
         /// 指定したゲームオブジェクトを取得する
+        /// 登録されていない場合は警告文と共にインスタンスを返す
         /// </summary>
         /// <param name="original">取得したいゲームオブジェクト</param>
         /// <returns>インスタンスが入ったハンドル</returns>
@@ -40,6 +43,7 @@ namespace Nkso.Container
 
         /// <summary>
         /// 指定したゲームオブジェクトを取得する
+        /// 登録されていない場合は警告文と共にインスタンスを返す
         /// </summary>
         /// <param name="original">取得したいゲームオブジェクト</param>
         /// <param name="parent">親にしたいオブジェクト</param>
@@ -48,6 +52,7 @@ namespace Nkso.Container
 
         /// <summary>
         /// 指定したコンポーネントを取得する
+        /// 登録されていない場合は警告文と共にインスタンスを返す
         /// </summary>
         /// <param name="original">取得したいコンポーネント</param>
         /// <returns>インスタンスが入ったハンドル</returns>
@@ -55,6 +60,7 @@ namespace Nkso.Container
 
         /// <summary>
         /// 指定したコンポーネントを取得する
+        /// 登録されていない場合は警告文と共にインスタンスを返す
         /// </summary>
         /// <param name="original">取得したいコンポーネント</param>
         /// <param name="parent">親にしたいオブジェクト</param>
@@ -63,6 +69,7 @@ namespace Nkso.Container
 
         /// <summary>
         /// 指定したコンポーネントを取得する
+        /// 登録されていない場合は警告文と共にインスタンスを返す
         /// </summary>
         /// <param name="original">取得したいコンポーネント</param>
         /// <returns>インスタンスが入ったハンドル</returns>
@@ -70,6 +77,7 @@ namespace Nkso.Container
 
         /// <summary>
         /// 指定したコンポーネントを取得する
+        /// 登録されていない場合は警告文と共にインスタンスを返す
         /// </summary>
         /// <param name="original">取得したいコンポーネント</param>
         /// <param name="parent">親にしたいオブジェクト</param>
