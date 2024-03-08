@@ -73,6 +73,7 @@ namespace nkn.Container
 
             return new GameObjectHandle(instance, pool.Release);
         }
+
         public ObjectHandle<GameObject> Get(GameObject original, Transform parent)
         {
             ObjectHandle<GameObject> handle = Get(original);
@@ -80,6 +81,7 @@ namespace nkn.Container
             return handle;
 
         }
+
         public ObjectHandle<GameObject> Get(GameObject original, Vector3 position, Quaternion rotation)
         {
             ObjectHandle<GameObject> handle = Get(original);
@@ -87,6 +89,7 @@ namespace nkn.Container
             handle.instance.transform.rotation = rotation;
             return handle;
         }
+
         public ObjectHandle<GameObject> Get(GameObject original, Vector3 position, Quaternion rotation, Transform parent)
         {
             ObjectHandle<GameObject> handle = Get(original);

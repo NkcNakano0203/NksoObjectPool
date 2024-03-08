@@ -22,7 +22,7 @@ namespace nkn.Container
         /// </summary>
         /// <param name="original">取得したいゲームオブジェクト</param>
         /// <returns>インスタンスが入ったハンドル</returns>
-        public ObjectHandle<GameObject> Get(GameObject original);
+        public ObjectHandle<GameObject> Get(GameObject original);   
 
         /// <summary>
         /// 指定したゲームオブジェクトを取得する

@@ -37,7 +37,7 @@ namespace Sample
         {
             Build(pool.GetComponent<IObjectContainer>());
             yield return null;
-            Debug.Log("ビルド終了");
+            Debug.Log("プールビルド終了");
         }
     }
 }

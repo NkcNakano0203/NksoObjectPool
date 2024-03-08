@@ -1,91 +1,57 @@
 using nkn.Container;
-using Sample;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SampleCreator : MonoBehaviour
+namespace Sample
 {
-    [SerializeField]
-    float createObjSpan = 0.5f;
 
-    [SerializeField]
-    float createComponentSpan = 0.8f;
-
-    [SerializeField]
-    GameObject[] createObjectPrefabs;
-
-    [SerializeField]
-    SampleComponet sampleComponetPrefab;
-
-    [SerializeField]
-    ObjectContainer objectContainer;
-
-    void Start()
+    public class SampleCreator : MonoBehaviour
     {
-        StartCoroutine(CreateObjectCoroutine(createObjSpan));
-        StartCoroutine(CreateComponetCoroutine(createComponentSpan));
-    }
+        [SerializeField]
+        ObjectContainer objectContainer;
 
-    IEnumerator CreateObjectCoroutine(float timeSpan)
-    {
-        int i = 0;
-        List<ObjectHandle<GameObject>> handles = new(5);
+        [SerializeField]
+        float createObjSpan = 0.5f;
 
-        while (true)
+        [SerializeField]
+        GameObject[] createObjectPrefabs;
+
+
+        void Start()
         {
-            int randomInsCount = Random.Range(1, 5);
-
-            for (int j = 0; j < randomInsCount; j++)
-            {
-                var handle = objectContainer.Get(createObjectPrefabs[i], transform);
-                handles.Add(handle);
-
-                Vector3 randomPos = new Vector3(Random.Range(-5, 5), Random.Range(-5, 5), 0);
-                handle.instance.transform.position = randomPos;
-            }
-
-            yield return new WaitForSeconds(timeSpan);
-
-            foreach (var handle in handles)
-            {
-                handle.Dispose();
-            }
-
-            handles.Clear();
-
-            i = i + 1 >= createObjectPrefabs.Length ? 0 : i + 1;
+            StartCoroutine(CreateObjectCoroutine(createObjSpan));
         }
-    }
 
-    IEnumerator CreateComponetCoroutine(float timeSpan)
-    {
-        List<ObjectHandle<SampleComponet>> handles = new(5);
-
-        while (true)
+        IEnumerator CreateObjectCoroutine(float timeSpan)
         {
-            int randomInsCount = Random.Range(1, 5);
+            int i = 0;
+            List<ObjectHandle<GameObject>> handles = new(5);
 
-            for (int j = 0; j < randomInsCount; j++)
+            while (true)
             {
-                var handle = objectContainer.Get(sampleComponetPrefab, transform);
-                handles.Add(handle);
+                int randomInsCount = Random.Range(1, 5);
 
-                handle.instance.ChangeColorCoroutine();
+                for (int j = 0; j < randomInsCount; j++)
+                {
+                    var handle = objectContainer.Get(createObjectPrefabs[i], transform);
+                    handles.Add(handle);
 
-                Vector3 randomPos = new Vector3(Random.Range(-5, 5), Random.Range(-5, 5), 0);
-                handle.instance.transform.position = randomPos;
+                    Vector3 randomPos = new Vector3(Random.Range(-5, 5), Random.Range(-5, 5), 0);
+                    handle.instance.transform.position = randomPos;
+                }
+
+                yield return new WaitForSeconds(timeSpan);
+
+                foreach (var handle in handles)
+                {
+                    handle.Dispose();
+                }
+
+                handles.Clear();
+
+                i = i + 1 >= createObjectPrefabs.Length ? 0 : i + 1;
             }
-
-            yield return new WaitForSeconds(timeSpan);
-
-            foreach (var handle in handles)
-            {
-                handle.instance.ChangeColorCoroutine();
-                handle.Dispose();
-            }
-
-            handles.Clear();
         }
     }
 }
