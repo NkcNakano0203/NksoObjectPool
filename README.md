@@ -1,2 +1,2 @@
 # 複数オブジェクトプール一元管理ライブラリ
-
+ソースコードはnknObjectPool>Asset>ObjectPool>Scriptsの中にあります
